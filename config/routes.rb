@@ -11,4 +11,22 @@ Rails.application.routes.draw do
   resources :users do
     resources :tasks
   end
+  namespace :api do
+    namespace :v1 do
+      get 'profile', to: 'users#profile'
+    end
+  end
+  namespace :api do
+    namespace :v1 do
+      resources :tasks
+    end
+  end
+  namespace :api do
+    namespace :v1 do
+      post 'auth/login', to: 'authentication#login'
+      resources :users, only: [:index, :show, :create]
+      resources :tasks
+    end
+  end
+
 end
