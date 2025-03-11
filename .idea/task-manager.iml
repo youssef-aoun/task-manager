@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="ModuleRunConfigurationManager">
+    <shared />
+  </component>
+  <component name="RModuleSettingsStorage">
+    <LOAD_PATH number="0" />
+    <I18N_FOLDERS number="1" string0="$MODULE_DIR$/config/locales" />
+  </component>
+  <component name="RailsPaths" isManagedAutomatically="true">
+    <entry key="app">
+      <value>null/app</value>
+    </entry>
+    <entry key="app/assets">
+      <value>null/app/assets</value>
+    </entry>
+    <entry key="app/channels">
+      <value>null/app/channels</value>
+    </entry>
+    <entry key="app/controllers">
+      <value>null/app/controllers</value>
+    </entry>
+    <entry key="app/helpers">
+      <value>null/app/helpers</value>
+    </entry>
+    <entry key="app/mailers">
+      <value>null/app/mailers</value>
+    </entry>
+    <entry key="app/models">
+      <value>null/app/models</value>
+    </entry>
+    <entry key="app/views">
+      <value>null/app/views</value>
+    </entry>
+    <entry key="config">
+      <value>null/config</value>
+    </entry>
+    <entry key="config/cable">
+      <value>null/config/cable.yml</value>
+    </entry>
+    <entry key="config/cache">
+      <value>null/config/cache.yml</value>
+    </entry>
+    <entry key="config/database">
+      <value>null/config/database.yml</value>
+    </entry>
+    <entry key="config/environment">
+      <value>null/config/environment.rb</value>
+    </entry>
+    <entry key="config/environments">
+      <value>null/config/environments</value>
+    </entry>
+    <entry key="config/initializers">
+      <value>null/config/initializers</value>
+    </entry>
+    <entry key="config/locales">
+      <value>null/config/locales</value>
+    </entry>
+    <entry key="config/routes">
+      <value>null/config/routes</value>
+    </entry>
+    <entry key="config/routes.rb">
+      <value>null/config/routes.rb</value>
+    </entry>
+    <entry key="config/solid_cache">
+      <value>null/config/solid_cache.yml</value>
+    </entry>
+    <entry key="db">
+      <value>null/db</value>
+    </entry>
+    <entry key="db/migrate">
+      <value>null/db/migrate</value>
+    </entry>
+    <entry key="db/seeds.rb">
+      <value>null/db/seeds.rb</value>
+    </entry>
+    <entry key="lib">
+      <value>null/lib</value>
+    </entry>
+    <entry key="lib/assets">
+      <value>null/lib/assets</value>
+    </entry>
+    <entry key="lib/tasks">
+      <value>null/lib/tasks</value>
+    </entry>
+    <entry key="lib/templates">
+      <value>null/lib/templates</value>
+    </entry>
+    <entry key="log">
+      <value>null/log/development.log</value>
+    </entry>
+    <entry key="public">
+      <value>null/public</value>
+    </entry>
+    <entry key="public/javascripts">
+      <value>null/public/javascripts</value>
+    </entry>
+    <entry key="public/stylesheets">
+      <value>null/public/stylesheets</value>
+    </entry>
+    <entry key="test/mailers/previews">
+      <value>file://$MODULE_DIR$/test/mailers/previews</value>
+      <value>null/test/mailers/previews</value>
+    </entry>
+    <entry key="tmp">
+      <value>null/tmp</value>
+    </entry>
+    <entry key="vendor">
+      <value>null/vendor</value>
+    </entry>
+    <entry key="vendor/assets">
+      <value>null/vendor/assets</value>
+    </entry>
+  </component>
+</module>

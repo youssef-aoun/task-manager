@@ -1,4 +1,5 @@
 class Api::V1::TasksController < ApplicationController
+  before_action :authenticate_request
   before_action :set_task, only: [:show, :update, :destroy]
 
   def index
