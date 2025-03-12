@@ -49,6 +49,7 @@ group :development, :test do
 
   gem 'jwt'
 
+  gem "kaminari"
 end
 
 
