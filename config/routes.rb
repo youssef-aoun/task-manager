@@ -8,25 +8,28 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   resources :users, only: [:index, :show, :create, :update, :destroy]
-  resources :users do
-    resources :tasks
-  end
+
+
   namespace :api do
     namespace :v1 do
       get 'profile', to: 'users#profile'
-    end
-  end
-  namespace :api do
-    namespace :v1 do
-      resources :tasks
-    end
-  end
-  namespace :api do
-    namespace :v1 do
+      post 'auth/register', to: 'authentication#register'
       post 'auth/login', to: 'authentication#login'
-      resources :users, only: [:index, :show, :create]
-      resources :tasks
+      delete 'auth/logout', to: 'authentication#logout'
+      delete 'users', to: 'users#destroy_me'
+
+      resources :users, only: [:index, :show, :update]
+
+      get 'projects/owned', to: 'projects#owned'
+      get 'projects/joined', to: 'projects#joined'
+
+      resources :projects, only: [:show, :create, :update, :destroy] do
+        resources :tasks, only: [:index, :create, :show, :update, :destroy]
+        resources :project_memberships, only: [:index, :create, :destroy], controller: 'project_memberships'
+      end
+      get 'projects/:project_id/my_tasks', to: 'tasks#my_tasks'
     end
   end
+
 
 end
