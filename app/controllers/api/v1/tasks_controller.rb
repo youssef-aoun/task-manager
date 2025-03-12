@@ -5,7 +5,11 @@ class Api::V1::TasksController < Api::V1::BaseController
 
   def index
     tasks = @project.owner == @current_user ? @project.tasks : @project.tasks.where(assignee: @current_user)
+
+    tasks = tasks.where(assignee_id: params[:user_id]) if params[:user_id].present?
+
     tasks = tasks.where(status: params[:status]) if params[:status].present?
+
     paginated_tasks = tasks.page(params[:page]).per(params[:per_page] || 3)
 
     render json: {
@@ -17,6 +21,7 @@ class Api::V1::TasksController < Api::V1::BaseController
       }
     }
   end
+
 
 
 

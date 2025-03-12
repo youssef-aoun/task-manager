@@ -25,11 +25,17 @@ Rails.application.routes.draw do
 
       resources :projects, only: [:show, :create, :update, :destroy] do
         resources :tasks, only: [:index, :create, :show, :update, :destroy]
-        resources :project_memberships, only: [:index, :create, :destroy], controller: 'project_memberships'
+        resources :project_memberships, only: [:index, :create, :destroy], controller: 'project_memberships' do
+          collection do
+            delete 'leave', to: 'project_memberships#leave' # Defines DELETE /api/v1/projects/:project_id/project_memberships/leave
+          end
+        end
       end
+
       get 'projects/:project_id/my_tasks', to: 'tasks#my_tasks'
     end
   end
+
 
 
 end
