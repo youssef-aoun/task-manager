@@ -9,33 +9,28 @@ Rails.application.routes.draw do
   # root "posts#index"
   resources :users, only: [:index, :show, :create, :update, :destroy]
 
-
   namespace :api do
     namespace :v1 do
-      get 'profile', to: 'users#profile'
-      post 'auth/register', to: 'authentication#register'
-      post 'auth/login', to: 'authentication#login'
-      delete 'auth/logout', to: 'authentication#logout'
-      delete 'users', to: 'users#destroy_me'
 
-      resources :users, only: [:index, :show, :update]
-
-      get 'projects/owned', to: 'projects#owned'
-      get 'projects/joined', to: 'projects#joined'
-
-      resources :projects, only: [:show, :create, :update, :destroy] do
-        resources :tasks, only: [:index, :create, :show, :update, :destroy]
-        resources :project_memberships, only: [:index, :create, :destroy], controller: 'project_memberships' do
-          collection do
-            delete 'leave', to: 'project_memberships#leave' # Defines DELETE /api/v1/projects/:project_id/project_memberships/leave
-          end
-        end
+      resource :auth, only: [] do
+        post 'register', to: 'authentication#register'
+        post 'login', to: 'authentication#login'
+        delete 'logout', to: 'authentication#logout'
       end
 
-      get 'projects/:project_id/my_tasks', to: 'tasks#my_tasks'
+      resource :profile, only: [:show, :update, :destroy], controller: 'users'
+      resources :users, only: [:index, :show, :update]
+
+      resources :projects, only: [:index, :show, :create, :update, :destroy] do
+        resources :tasks, only: [:index, :create, :show, :update, :destroy]
+
+        resources :project_memberships, only: [:index, :create]
+
+        delete 'members/:id', to: 'project_memberships#destroy', as: 'remove_member'
+        delete 'members', to: 'project_memberships#destroy', as: 'leave_project'
+      end
     end
   end
-
 
 
 end

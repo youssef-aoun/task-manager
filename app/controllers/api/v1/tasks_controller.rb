@@ -60,17 +60,6 @@ class Api::V1::TasksController < Api::V1::BaseController
     head :no_content
   end
 
-  def my_tasks
-    project = Project.find(params[:project_id])
-    tasks = project.tasks.where(assignee: @current_user)
-
-    if tasks.present?
-      render json: tasks, status: :ok
-    else
-      render json: { error: "No tasks found" }, status: :not_found
-    end
-  end
-
   private
 
   def set_task

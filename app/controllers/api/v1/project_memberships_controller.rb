@@ -25,28 +25,23 @@ class Api::V1::ProjectMembershipsController < Api::V1::BaseController
 
 
   def destroy
-    return render json: { error: "Only the project owner can remove users" }, status: :forbidden unless @project.owner == @current_user
+    user = params[:id] ? User.find_by(id: params[:id]) : @current_user
 
-    user = User.find_by(id: params[:id])  # 👈 Fix: use params[:id]
     return render json: { error: "User not found" }, status: :not_found unless user
     return render json: { error: "User is not a member" }, status: :unprocessable_entity unless @project.members.include?(user)
+
+    if user == @current_user
+      action = "left the project"
+    else
+      return render json: { error: "Only the project owner can remove users" }, status: :forbidden unless @project.owner == @current_user
+      action = "was removed from the project"
+    end
 
     @project.members.delete(user)
     @project.tasks.where(assignee_id: user.id).update_all(assignee_id: nil)
 
-    render json: { message: "User removed successfully", project: @project }, status: :ok
+    render json: { message: "#{user.name} #{action} successfully", project: @project }, status: :ok
   end
-
-  def leave
-    return render json: { error: "You are not a member of this project" }, status: :forbidden unless @project.members.include?(@current_user)
-
-    @project.members.delete(@current_user)
-    @project.tasks.where(assignee_id: @current_user.id).update_all(assignee_id: nil)
-
-    render json: { message: "You have successfully left the project", project: @project }, status: :ok
-  end
-
-
 
   private
 

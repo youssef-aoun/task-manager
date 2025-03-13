@@ -1,15 +1,21 @@
 class Api::V1::ProjectsController < Api::V1::BaseController
   before_action :set_project, only: [:show, :update, :destroy]
 
-  def owned
-    projects = @current_user.projects
-    render json: projects
+  def index
+    projects = case params[:type]
+               when 'owned'
+                 @current_user.projects
+               when 'joined'
+                 @current_user.joined_projects.distinct
+               else
+                 Project.where(id: @current_user.projects.select(:id))
+                        .or(Project.where(id: @current_user.joined_projects.select(:id)))
+                        .distinct
+               end
+
+    render json: projects, status: :ok
   end
 
-  def joined
-    projects = @current_user.joined_projects.distinct
-    render json: projects
-  end
 
   def show
     render json: @project
