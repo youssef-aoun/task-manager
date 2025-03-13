@@ -1,4 +1,5 @@
 class Api::V1::ProjectMembershipsController < Api::V1::BaseController
+  include Apipie::DSL
   before_action :set_project
 
   def index

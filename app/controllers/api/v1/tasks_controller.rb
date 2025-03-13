@@ -1,4 +1,5 @@
 class Api::V1::TasksController < Api::V1::BaseController
+  include Apipie::DSL
   before_action :set_project
   before_action :set_task, only: [:show, :update, :destroy]
 
@@ -79,6 +80,7 @@ class Api::V1::TasksController < Api::V1::BaseController
   end
 
   def valid_assignee?(assignee_id)
-    assignee_id.nil? || @project.members.exists?(id: assignee_id)
+    assignee_id.nil? || @project.owner.id == assignee_id || @project.members.exists?(id: assignee_id)
   end
+
 end

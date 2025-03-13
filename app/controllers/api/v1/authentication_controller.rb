@@ -1,4 +1,5 @@
 class Api::V1::AuthenticationController < Api::V1::BaseController
+  include Apipie::DSL
   skip_before_action :authenticate_request, only: [:login, :logout, :register]
   def login
     user = User.find_by(email: params[:email])
@@ -11,8 +12,13 @@ class Api::V1::AuthenticationController < Api::V1::BaseController
   end
 
   def logout
+    unless request.headers['Authorization'].present?
+      return render json: { error: "Missing or invalid token" }, status: :unauthorized
+    end
+
     render json: { message: "Successfully logged out. Please discard your token." }, status: :ok
   end
+
 
   def register
     user = User.new(user_params)

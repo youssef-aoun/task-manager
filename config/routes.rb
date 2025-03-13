@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  apipie
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -18,8 +21,9 @@ Rails.application.routes.draw do
         delete 'logout', to: 'authentication#logout'
       end
 
-      resource :profile, only: [:show, :update, :destroy], controller: 'users'
-      resources :users, only: [:index, :show, :update]
+      get 'users/profile', to: 'users#profile'
+      delete 'users', to: 'users#destroy'
+      resources :users, only: [:index, :show, :update, :destroy]
 
       resources :projects, only: [:index, :show, :create, :update, :destroy] do
         resources :tasks, only: [:index, :create, :show, :update, :destroy]

@@ -1,24 +1,8 @@
-# README
+A Ruby on Rails API for managing projects, tasks, and users with authentication and role-based permissions.<br>
+Features<br>
+✔ User Authentication (JWT-based)<br>
+✔ Create & Manage Projects<br>
+✔ Assign & Manage Tasks<br>
+✔ Role-based Permissions<br>
+✔ Pagination for Task Listings<br>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
