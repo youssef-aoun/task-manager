@@ -45,18 +45,18 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
-  gem 'bcrypt', '~> 3.1.7'
 
-  gem 'jwt'
-
-  gem "kaminari"
-
-  gem 'faker'
-
-  gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 end
 
+gem 'bcrypt', '~> 3.1.7'
 
+gem 'jwt'
+
+gem "kaminari"
+
+gem 'faker'
+
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
 gem "rack-cors", "~> 2.0"
 
