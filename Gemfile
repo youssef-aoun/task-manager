@@ -46,6 +46,11 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
 
+  gem 'faker'
+  gem "rspec-rails", "~> 7.1"
+  gem "factory_bot_rails", "~> 6.4"
+
+  gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 end
 
 gem 'bcrypt', '~> 3.1.7'
@@ -54,14 +59,11 @@ gem 'jwt'
 
 gem "kaminari"
 
-gem 'faker'
 
-gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
 gem "rack-cors", "~> 2.0"
 
-gem "rspec-rails", "~> 7.1"
-gem "factory_bot_rails", "~> 6.4"
+
 
 gem "rswag", "~> 2.16"
 
