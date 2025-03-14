@@ -10,22 +10,22 @@ class Api::V1::ProjectsController < Api::V1::BaseController
   header :Authorization, "Authorization token", required: true
   param :type, String, desc: "Filter by type: 'owned' (projects owned by user) or 'joined' (projects user has joined)"
   example '
-[
-  {
-    "id": 1,
-    "name": "My Project",
-    "description": "An awesome project",
-    "owner_id": 5
-  }
+    [
+      {
+        "id": 1,
+        "name": "My Project",
+        "description": "An awesome project",
+        "owner_id": 5
+      }
 
-  {
-    "id": 2,
-    "name": "My SecondProject",
-    "description": "Not so awesome project",
-    "owner_id": 5
-  }
-]
-'
+      {
+        "id": 2,
+        "name": "My SecondProject",
+        "description": "Not so awesome project",
+        "owner_id": 5
+      }
+    ]
+  '
   def index
     projects = case params[:type]
                when 'owned'

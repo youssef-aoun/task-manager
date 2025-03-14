@@ -1,0 +1,238 @@
+<!-- BEGIN C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/layouts/apipie/apipie.html.erb --><!DOCTYPE html>
+<html>
+<head>
+  <title>API documentation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type='text/css' rel='stylesheet' href='../../../apipie/stylesheets/bundled/bootstrap.min.css'/>
+<link type='text/css' rel='stylesheet' href='../../../apipie/stylesheets/bundled/prettify.css'/>
+<link type='text/css' rel='stylesheet' href='../../../apipie/stylesheets/bundled/bootstrap-responsive.min.css'/>
+  <link type='text/css' rel='stylesheet' href='../../../apipie/stylesheets/application.css'/>
+  <!-- IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div id='container'>
+        <!-- BEGIN C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/method.html.erb --><ul class='breadcrumb'>
+  <li>
+    <a href='../../../apipie/1.0.html'>Associations 1.0</a>
+    <span class='divider'>/</span>
+  </li>
+  <li>
+    <a href='../../../apipie/1.0/projects.html'>
+      Projects
+      
+    </a>
+    <span class='divider'>/</span>
+  </li>
+  <li class='active'>update</li>
+  
+
+</ul>
+
+  <div class='page-header'>
+    <h1>
+      PUT /api/v1/projects/:id
+      <br>
+      <small>Update a project</small>
+    </h1>
+  </div>
+
+<div>
+
+  
+
+
+  <h2>Errors</h2>
+  <!-- BEGIN C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_errors.html.erb -->
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Code</th>
+			<th>Description</th>
+			
+		</tr>
+	</thead>
+
+	<tbody>
+			<tr>
+				<td><span class="label label-warning2"> 403 </span></td>
+				<td>Only the project owner can update</td>
+			</tr>
+	</tbody>
+</table>
+<!-- END C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_errors.html.erb -->
+
+
+  <h2>Examples</h2>
+    <pre class="prettyprint">
+{
+  &quot;id&quot;: 1,
+  &quot;name&quot;: &quot;Updated Project Name&quot;
+}
+</pre>
+
+  <h2>Params</h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Param name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- BEGIN C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_params.html.erb -->  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id</strong>
+      <br>
+      <small>
+        required
+        
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Project ID</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+      <!-- BEGIN C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_deprecation.html.erb --><!-- END C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_deprecation.html.erb -->
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>name</strong>
+      <br>
+      <small>
+        optional
+        
+        
+      </small>
+    </td>
+    <td>
+      
+<p>New project name</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+      <!-- BEGIN C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_deprecation.html.erb --><!-- END C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_deprecation.html.erb -->
+
+    </td>
+
+  </tr>
+
+  
+<!-- END C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_params.html.erb -->
+    </tbody>
+  </table>
+  <h2>Returns</h2>
+    <h3>Code: 200</h3>
+      <h4>Description:</h4>
+      <p>Updated project</p>
+    <table class='table'>
+      <thead>
+        <tr>
+          <th>Param name</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- BEGIN C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_params.html.erb -->  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>id</strong>
+      <br>
+      <small>
+        optional
+        
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Project ID</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a Integer</p>
+</li>
+        </ul>
+
+      <!-- BEGIN C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_deprecation.html.erb --><!-- END C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_deprecation.html.erb -->
+
+    </td>
+
+  </tr>
+
+  
+  <tr style='background-color:rgb(255,255,255);'>
+    <td>
+      <strong>name</strong>
+      <br>
+      <small>
+        optional
+        
+        
+      </small>
+    </td>
+    <td>
+      
+<p>Updated project name</p>
+
+        <p><strong>Validations:</strong></p>
+        <ul>
+            <li>
+<p>Must be a String</p>
+</li>
+        </ul>
+
+      <!-- BEGIN C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_deprecation.html.erb --><!-- END C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_deprecation.html.erb -->
+
+    </td>
+
+  </tr>
+
+  
+<!-- END C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_params.html.erb -->
+      </tbody>
+    </table>
+
+    <!-- BEGIN C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_headers.html.erb --><!-- END C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_headers.html.erb -->
+
+<!-- BEGIN C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_headers.html.erb --><!-- END C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/_headers.html.erb -->
+
+</div>
+
+<!-- END C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/apipie/apipies/method.html.erb -->
+        
+      </div>
+    </div>
+    <hr>
+    <footer></footer>
+  </div>
+  <script type='text/javascript' src='../../../apipie/javascripts/bundled/jquery.js'></script>
+<script type='text/javascript' src='../../../apipie/javascripts/bundled/bootstrap-collapse.js'></script>
+<script type='text/javascript' src='../../../apipie/javascripts/bundled/prettify.js'></script>
+<script type='text/javascript' src='../../../apipie/javascripts/apipie.js'></script>
+</body>
+</html>
+<!-- END C:/Ruby33-x64/lib/ruby/gems/3.3.0/gems/apipie-rails-1.4.2/app/views/layouts/apipie/apipie.html.erb -->
