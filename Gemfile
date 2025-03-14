@@ -63,7 +63,4 @@ gem "factory_bot_rails", "~> 6.4"
 
 gem "rswag", "~> 2.16"
 
-gem "grape", "~> 2.3"
-gem "grape-swagger", "~> 2.1"
-gem 'grape-swagger-rails'
 gem 'apipie-rails'
