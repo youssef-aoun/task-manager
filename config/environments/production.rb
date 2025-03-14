@@ -44,7 +44,7 @@ Rails.application.configure do
   config.active_support.report_deprecations = false
 
   # Replace the default in-process memory cache store with a durable alternative.
-  config.cache_store = :solid_cache_store, { database: { writing: :primary }, backend: :postgresql }
+  # config.cache_store = :solid_cache_store, { database: { writing: :primary }, backend: :postgresql }
 
 
 
