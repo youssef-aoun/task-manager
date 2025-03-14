@@ -52,6 +52,8 @@ group :development, :test do
   gem "kaminari"
 
   gem 'faker'
+
+  gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 end
 
 
@@ -67,3 +69,4 @@ gem "grape", "~> 2.3"
 gem "grape-swagger", "~> 2.1"
 gem 'grape-swagger-rails'
 gem 'apipie-rails'
+
