@@ -81,7 +81,7 @@ The API supports **authentication, role-based access, and pagination**.
 ## **API Documentation**
 This API is documented using **Apipie**.
 Open in your browser:
-```
-http://localhost:3000/apipie
+```[
+https://task-manager-jdre.onrender.com/apipie/
 ```
 
